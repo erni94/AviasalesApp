@@ -1,0 +1,51 @@
+*{
+    box-sizing: border-box;
+}
+.App{
+    background-color: #F3F7FA;
+}
+
+.app-container{
+    border: 1px solid red;
+    min-height: 100vh;
+    max-width: 754px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    border: 1px solid red;
+    padding: 39px 0;
+    text-align: center;
+}
+
+.main{
+    border: 1px solid red;
+    display: grid;
+    grid-template-areas: "filter tabs" "filter tickets-list";
+}
+
+.filter{
+    border: 1px solid red;
+    grid-area: filter;
+
+}
+
+.check-box{
+    width: 20px;
+    height: 20px;
+    background-image: url("../../assets/Checkbox.svg");
+}
+
+.tabs{
+    border: 1px solid red;
+    grid-area: tabs;
+}
+
+.tickets-list{
+    border: 1px solid red;
+    grid-area: tickets-list;
+}
+
+
