@@ -1,0 +1,62 @@
+.filter {
+    grid-area: filter;
+    color: #4A4A4A;
+    font-size: 13px;
+    padding: 20px 0;
+    width: 232px;
+    height: 252px;
+    border-radius: 5px;
+    background-color: #fff;
+    filter: drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.10));
+
+    form {
+        display: flex;
+        flex-direction: column;
+        font-weight: 400;
+    }
+
+    h3 {
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        padding: 0 20px;
+        font-size: 12px;
+    }
+
+    label {
+        position: relative;
+        cursor: pointer;
+        display: block;
+        padding: 10px 50px;
+
+        &:hover {
+            background-color: #F1FCFF;
+        }
+    }
+}
+
+.visible-hide {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+}
+
+.check-box {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-image: url("../../assets/Checkbox.svg");
+    background-repeat: no-repeat;
+    margin-left: -30px;
+
+}
+.input {
+
+}
+input:checked + .check-box{
+    background-image: url("../../assets/checkbox-active.svg");
+}
