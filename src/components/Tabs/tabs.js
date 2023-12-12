@@ -5,7 +5,6 @@ import * as filterActions from "../../store/action";
 import classes from "./tabs.module.scss";
 
 const Tabs = ({sortType, actions}) => {
-    console.log(sortType)
 
     const {changeSort} = actions
 

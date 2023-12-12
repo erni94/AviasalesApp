@@ -7,7 +7,8 @@ const initialState = {
         threeTransfers: false,
     },
     sortType: 'lowPrice',
-    ticket:[]
+    tickets:[],
+    searchID: null
 
 };
 
@@ -56,7 +57,13 @@ const reducer = (state = initialState, action) => {
         case 'ADD_TICKET':{
             return {
                 ...state,
-                ticket: [...state.ticket, action.ticket]
+                tickets: [...state.tickets, ...action.tickets]
+            }
+        }
+        case 'ADD_SEARCH_ID':{
+            return {
+                ...state,
+                searchID: action.searchID
             }
         }
         default:
