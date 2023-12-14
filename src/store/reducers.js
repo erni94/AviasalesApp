@@ -1,10 +1,10 @@
 const initialState = {
     filter: {
-        all: false,
-        noTransfer: false,
-        oneTransfer: false,
-        twoTransfers: false,
-        threeTransfers: false,
+        all: true,
+        noTransfer: true,
+        oneTransfer: true,
+        twoTransfers: true,
+        threeTransfers: true,
     },
     sortType: 'lowPrice',
     tickets:[],

@@ -14,19 +14,14 @@ const TicketList = ({tickets, actions, sortType, filter}) => {
 
     useEffect(() => {
         const arrayFilter = getArrayFilter(filter);
-
         if (sortType === 'lowPrice') {
             setLcTickets(sortByPrice((filterTicketsByStops(tickets, arrayFilter))));
-        } else if (sortType === 'lowDuration') {
+        } else if (sortType === 'fast') {
             setLcTickets(sortByDuration((filterTicketsByStops(tickets, arrayFilter))));
-        } else if (sortType === 'lowPriceDuration') {
+        } else if (sortType === 'optimal') {
             setLcTickets(sortByPriceAndDuration((filterTicketsByStops(tickets, arrayFilter))));
         }
     }, [tickets, filter, sortType]);
-
-
-    console.log(lcTickets);
-
 
     return (
         <div className={classes['ticket-list']}>
