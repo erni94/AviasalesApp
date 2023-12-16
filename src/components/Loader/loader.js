@@ -10,6 +10,7 @@ export default function Loader() {
             sx={
                 {
                     width: 500,
+
                     '--LinearProgress-thickness': '10px',
                 }
 
