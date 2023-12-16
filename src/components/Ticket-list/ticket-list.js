@@ -42,7 +42,11 @@ const TicketList = ({ tickets, sortType, filter, loading }) => {
           <Loader />
         </div>
       )}
-
+      {!loading && lcTickets.length === 0 && (
+        <div className={classes['no-tickets']}>
+          <p>Рейсов, подходящих под заданные фильтры, не найдено</p>
+        </div>
+      )}
       {lcTickets.slice(0, showMore).map((ticket) => {
         const uniqueKey = `${ticket.carrier}_${ticket.segments[0].origin}_${ticket.segments[1].destination}_${ticket.segments[0].date}`
         return <Ticket key={uniqueKey} ticket={ticket} />
