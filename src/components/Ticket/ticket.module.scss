@@ -1,60 +1,60 @@
 .ticket {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 5px;
+  width: 502px;
+  height: 184px;
+  filter: drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.1));
+  margin-left: 20px;
+  margin-bottom: 20px;
+
+  &-header {
     display: flex;
-    flex-direction: column;
-    background-color: #FFFFFF;
-    border-radius: 5px;
-    width: 502px;
-    height: 184px;
-    filter: drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.10));
-    margin-left: 20px;
-    margin-bottom: 20px;
+    align-items: center;
+    justify-content: space-between;
+    width: 462px;
+    height: 36px;
+    margin: 20px;
+  }
 
-    &-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 462px;
-        height: 36px;
-        margin: 20px;
-    }
-
-    &-data {
-        display: flex;
-        width: 462px;
-        height: 39px;
-        margin: 0 20px;
-        justify-content: space-between;
-        margin-bottom: 10px;
-    }
+  &-data {
+    display: flex;
+    width: 462px;
+    height: 39px;
+    margin: 0 20px;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
 }
 
 .price {
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 24px;
-    color: #2196F3;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  color: #2196f3;
 }
 
 .aviacompany {
-    & img {
-        width: 100px;
-    }
+  & img {
+    width: 100px;
+  }
 }
 
 .ticket-info {
-    width: 141px;
-    color: #4A4A4A;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 21px; /* 150% */
+  width: 141px;
+  color: #4a4a4a;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px; /* 150% */
 }
 
 .gray-text {
-    color: #A0B0B9;
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 18px; /* 150% */
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
+  color: #a0b0b9;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px; /* 150% */
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
