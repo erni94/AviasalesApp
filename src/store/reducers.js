@@ -8,7 +8,9 @@ const initialState = {
     },
     sortType: 'lowPrice',
     tickets:[],
-    searchID: null
+    searchID: null,
+    loading: false,
+    error: null,
 
 };
 
@@ -66,6 +68,28 @@ const reducer = (state = initialState, action) => {
                 searchID: action.searchID
             }
         }
+
+        case 'GET_TICKETS_START':{
+            return {
+                ...state,
+                loading: true
+            }
+        }
+
+        case 'GET_TICKETS_END':{
+            return {
+                ...state,
+                loading: false
+            }
+        }
+
+        case 'GET_TICKETS_ERROR':{
+            return {
+                ...state,
+                error: action.error
+            }
+        }
+
         default:
             return state;
     }

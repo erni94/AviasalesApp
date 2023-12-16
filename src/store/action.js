@@ -47,16 +47,41 @@ const getSearchID = () => {
 }
 
 const getTickets = (searchID) => {
-    return (dispatch)=>{
-        axios.get(`https://aviasales-test-api.kata.academy/tickets?searchId=${searchID}`)
-            .then((response)=>{
-                dispatch({
-                    type: 'ADD_TICKET',
-                    tickets: response.data.tickets
+    return (dispatch) => {
+
+        dispatch({ type: 'GET_TICKETS_START' });
+        const fetchTickets = () => {
+            axios.get(`https://aviasales-test-api.kata.academy/tickets?searchId=${searchID}`)
+                .then((response) => {
+                    const { tickets, stop } = response.data;
+                    dispatch({
+                        type: 'ADD_TICKET',
+                        tickets
+                    });
+
+                    if (!stop) {
+
+                        fetchTickets();
+                    }
+                    else {
+                        dispatch({ type: 'GET_TICKETS_END' });
+                    }
                 })
-            })
-    }
-}
+                .catch((error) => {
+                    // Записываем ошибку в стейт, но продолжаем загрузку
+                    dispatch({
+                        type: 'GET_TICKETS_ERROR',
+                        error: error.message
+                    });
+                    // Продолжаем загрузку билетов
+                    fetchTickets();
+                });
+        };
+
+        // Начинаем загрузку билетов
+        fetchTickets();
+    };
+};
 
 
 export { toggleFilter, toggleAllOn, toggleAllOff,changeSort, getSearchID, getTickets };
